@@ -1,9 +1,14 @@
 "Text Adventure"
 
-room_1 = {}
-
 file = open("room_1.txt")
+room_1 = {}
 for line in file:
-    print(line)
+    room_1[line.split(":")[0]] = line.split(":")[1]
+    
+#    d['mynewkey'] = 'mynewvalue'
 
-print("Hello world!")
+#file = open("room_1.txt")    
+#for i, line in enumerate(file, 1):
+#    if i % 2 == 0:
+#        print(i)
+#        print(line)

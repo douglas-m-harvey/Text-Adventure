@@ -1,2 +1,3 @@
-Main Room
-You awake in a cold dark room - a storeroom by the looks of it. How will you escape?
+Number:1
+Name:Main Room
+Description:You awake in a cold dark room - a storeroom by the looks of it. How will you escape?
