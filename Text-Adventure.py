@@ -3,7 +3,8 @@
 file = open("room_1.txt")
 room_1 = {}
 for line in file:
-    room_1[line.split(":")[0]] = line.split(":")[1]
+    room_1[line.split(": ")[0]] = line.split(": ")[1]
+file.close()
     
 #    d['mynewkey'] = 'mynewvalue'
 
@@ -12,3 +13,4 @@ for line in file:
 #    if i % 2 == 0:
 #        print(i)
 #        print(line)
+
