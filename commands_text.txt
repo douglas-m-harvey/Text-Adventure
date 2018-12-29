@@ -1,0 +1,1 @@
+help: To quit, type "quit", or something similar.
