@@ -57,10 +57,12 @@ def room_change(direction):
                 current_room = int(list_rooms[current_room][str("connect_" +
                                    direction)])
                 if list_rooms[current_room]["visited"] == str(False):
-                    print("\n" + list_rooms[current_room]["description_first"])
+                    print("\n" + list_rooms[current_room]["description_first"]
+                          + "\n")
                 elif list_rooms[current_room]["visited"] == str(True):
                     print("\n" +
-                          list_rooms[current_room]["description_visited"])
+                          list_rooms[current_room]["description_visited"] +
+                          "\n")
                 list_rooms[current_room]["visited"] = str(True)
             else:
                 print("This door doesn't exist")
