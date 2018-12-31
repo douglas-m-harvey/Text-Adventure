@@ -1,0 +1,1 @@
+help: To quit, type "quit" or something similar. To go through, for example, the north door, type "go through north door" or something similar.

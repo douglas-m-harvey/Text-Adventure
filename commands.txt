@@ -1,0 +1,6 @@
+help: "help", "Help"
+quit: "quit", "Quit", "close", "Close", "exit", "Exit"
+go_n: "go north", "Go north", "go through north door", "Go through north door", "go north door", "Go through north door"
+go_e: "go east", "Go east", "go through east door", "Go through east door", "go east door", "Go through east door"
+go_s: "go south", "Go south", "go through south door", "Go through south door", "go south door", "Go through south door"
+go_w: "go west", "Go west", "go through west door", "Go through west door", "go west door", "Go through west door"
