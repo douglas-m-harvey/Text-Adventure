@@ -1,0 +1,5 @@
+number: 1
+name: placeholder object 1
+input_names: "Placeholder object 1", "placeholder Object 1", "placeholder object 1"
+room_location: 1
+description: A totally nondescript object of some kind, with a 1 on it.

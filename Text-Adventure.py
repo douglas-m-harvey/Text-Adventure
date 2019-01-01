@@ -1,31 +1,44 @@
-"Text Adventure"
+" --- Text Adventure --- "
+
 
 # Import required modules.
 import os
 
-
-# Read the number of "room_x.txt" files in the rooms directory and make a
-# "list_rooms" list of empty lists of this length.
-no_rooms = len(os.listdir("./rooms"))
-list_rooms = [[] for i in range(no_rooms)]
+# Define initial conditions.
 player_start = 4
 current_room = player_start
 
 
-# For each "room_x.txt" file in the rooms directory, write its contents to a
-# dictionary and add each dictionary to "list_rooms".
-i = -1
-for room in os.listdir("./rooms"):
-    i += 1
-    os.chdir("./rooms")
-    list_rooms[i] = {}
-    file = open(room)
-    for line in file:
-        list_rooms[i][line.split(": ")[0]] \
-            = \
-            str.strip(line.split(": ")[1])
-    file.close()
-    os.chdir("..")
+"""
+--- The following section handles reading and storing data from text files  ---
+"""
+
+
+# Define a "read_files" function to read the contents of the files in a
+# specified "name" directory to a list of dictionaries, and return this list
+# along with the number of files in the directory.
+def read_files(name):
+    number = len(os.listdir("./" + str(name) + "s"))
+    list = [[] for i in range(number)]
+    i = -1
+    for object in os.listdir("./" + str(name) + "s"):
+        i += 1
+        os.chdir("./" + str(name) + "s")
+        list[i] = {}
+        file = open(object)
+        for line in file:
+            list[i][line.split(": ")[0]] \
+                = \
+                str.strip(line.split(": ")[1])
+        file.close()
+        os.chdir("..")
+    return(number, list)
+
+
+# Call the "read_files" function to write the contents of the room and object
+# files in their respective directories to 2 lists of dictionaries.
+no_rooms, list_rooms = read_files("room")
+no_objects, list_objects = read_files("object")
 
 # Write the contents of "commands.txt" to a "commands" dictionary
 commands = {}
@@ -44,6 +57,11 @@ for line in file:
         = \
         str(str.strip(line.split(": ")[1]))
 file.close()
+
+
+"""
+--- The following section handles player input and game output. ---
+"""
 
 
 # Define a "room_change" function which changes the player's current room based
@@ -83,6 +101,7 @@ while running is not False:
             print(commands_text["help"])
     for i in commands["quit"]:
         if player_input == i:
+            print(commands_text["quit"])
             running = False
     room_change("n")
     room_change("e")
