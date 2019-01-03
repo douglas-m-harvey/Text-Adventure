@@ -1,0 +1,10 @@
+number: 2
+name: "placeholder 2"
+player_location: False
+visited: False
+description_first: "You are in an empty yellow room. There is a door in the west wall. There is a book on the floor." 
+description_visited: "You are back in the empty yellow room. There is a door in the west wall. There is a book on the floor." 
+connect_n: False
+connect_e: False
+connect_s: False
+connect_w: 0

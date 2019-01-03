@@ -1,5 +1,0 @@
-number: 0
-name: placeholder object 0
-input_names: "Placeholder object", "placeholder Object", "placeholder object"
-room_location: 0
-description: A totally nondescript object of some kind, with a 0 on it.

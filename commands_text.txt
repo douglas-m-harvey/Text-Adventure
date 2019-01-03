@@ -1,2 +1,2 @@
-help: To quit, type "quit" or something similar. To go through, for example, the north door, type "go through north door" or something similar.
-quit: Bye!
+help: """\n - To quit, type "quit". \n - To go through, for example, the north door, type "go through north door". \n - To look at an object in more detail, type "look" followed by the name of the object"""
+quit: "\nBye!"

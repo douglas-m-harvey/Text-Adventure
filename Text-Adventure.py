@@ -5,7 +5,7 @@
 import os
 
 # Define initial conditions.
-player_start = 4
+player_start = 0
 current_room = player_start
 
 
@@ -29,34 +29,35 @@ def read_files(name):
         for line in file:
             list[i][line.split(": ")[0]] \
                 = \
-                str.strip(line.split(": ")[1])
+                eval(str.strip(line.split(": ")[1]))
         file.close()
         os.chdir("..")
     return(number, list)
 
 
-# Call the "read_files" function to write the contents of the room and object
-# files in their respective directories to 2 lists of dictionaries.
+# Define a "read_files_home" function to read the contents of a specified
+# "name" file in the main working directory to a dictionary and return this
+# dictionary.
+def read_files_home(name):
+    dictionary = {}
+    file = open(str(name) + ".txt")
+    for line in file:
+        dictionary[line.split(": ")[0]] \
+            = \
+            eval(str.strip(line.split(": ")[1]))
+    file.close()
+    return(dictionary)
+
+
+# Call the "read_files" function to read the contents of the room and object
+# files in their respective directories to lists of dictionaries.
 no_rooms, list_rooms = read_files("room")
 no_objects, list_objects = read_files("object")
 
-# Write the contents of "commands.txt" to a "commands" dictionary
-commands = {}
-file = open("commands.txt")
-for line in file:
-    commands[line.split(": ")[0]] \
-        = \
-        eval(str.strip(line.split(": ")[1]))
-file.close()
-
-# Write the contents of "commands_text.txt" to a "commands_text" dictionary
-commands_text = {}
-file = open("commands_text.txt")
-for line in file:
-    commands_text[line.split(": ")[0]] \
-        = \
-        str(str.strip(line.split(": ")[1]))
-file.close()
+# Call the "read_files_home" function to read the contents of the commands.txt
+# and commands_text.txt files to dictionaries.
+commands = read_files_home("commands")
+commands_text = read_files_home("commands_text")
 
 
 """
@@ -71,20 +72,23 @@ def room_change(direction):
     global current_room
     for i in commands[str("go_" + direction)]:
         if player_input == i:
-            if list_rooms[current_room][str("door_" + direction)] == str(True):
+            if list_rooms[current_room][str("connect_" + direction)] \
+                    is not False:
                 print("\nYou go through the door.")
-                current_room = int(list_rooms[current_room][str("connect_" +
-                                   direction)])
-                if list_rooms[current_room]["visited"] == str(False):
+                current_room = list_rooms[current_room][str("connect_" +
+                                                            direction)]
+                if list_rooms[current_room]["visited"] is False:
                     print("\n" + list_rooms[current_room]["description_first"]
                           + "\n")
-                elif list_rooms[current_room]["visited"] == str(True):
+                elif list_rooms[current_room]["visited"] is True:
                     print("\n" +
                           list_rooms[current_room]["description_visited"] +
                           "\n")
-                list_rooms[current_room]["visited"] = str(True)
+                list_rooms[current_room]["visited"] = True
             else:
                 print("This door doesn't exist")
+        else:
+            pass
     return()
 
 
@@ -107,3 +111,9 @@ while running is not False:
     room_change("e")
     room_change("s")
     room_change("w")
+    for i in commands["look"]:
+        for j in range(no_objects):
+            for k in list_objects[j]["input_names"]:
+                if player_input == str(i + k):
+                    if list_objects[j]["room_location"] == current_room:
+                        print("\n" + list_objects[j]["description"])

@@ -1,0 +1,5 @@
+number: 0
+name: "axe"
+input_names: "axe", "Axe"
+room_location: 0
+description: "A big shiny axe"

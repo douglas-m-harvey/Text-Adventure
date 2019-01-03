@@ -1,0 +1,5 @@
+number: 1
+name: "sandwich"
+input_names: "sandwich", "Sandwich"
+room_location: 1
+description: "A nice big cheese sandwich."

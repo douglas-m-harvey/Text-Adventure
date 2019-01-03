@@ -1,0 +1,10 @@
+number: 0
+name: "Main Room"
+player_location: False
+visited: False
+description_first: "You are in an empty white room. There are doors in the north, east, south and west walls. There is an axe on the floor."
+description_visited: "You are back in the empty white room. There are doors in the north, east, south and west walls. There is an axe on the floor."
+connect_n: 1
+connect_e: 2
+connect_s: 3
+connect_w: 4

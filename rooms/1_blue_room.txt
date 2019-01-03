@@ -1,0 +1,10 @@
+number: 1
+name: "placeholder 1"
+player_location: False
+visited: False
+description_first: "You are in an empty blue room. There are doors in the south and west walls. There is a sandwich on the floor." 
+description_visited: "You are back in the empty blue room. There are doors in the south and west walls. There is a sandwich on the floor." 
+connect_n: False
+connect_e: False
+connect_s: 0
+connect_w: 5

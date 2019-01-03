@@ -1,0 +1,10 @@
+number: 4
+name: "placeholder 4"
+player_location: False
+visited: False
+description_first: "You are in an empty red room. There are doors in the north and east walls."
+description_visited: "You are back in the empty red room. There are doors in the north and east walls."
+connect_n: 5
+connect_e: 0
+connect_s: False
+connect_w: False

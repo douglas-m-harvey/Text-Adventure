@@ -1,5 +1,0 @@
-number: 2
-name: placeholder object 2
-input_names: "Placeholder object 2", "placeholder Object 2", "placeholder object 2"
-room_location: 2
-description: A totally nondescript object of some kind, with a 2 on it. 

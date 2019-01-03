@@ -1,0 +1,5 @@
+number: 2
+name: "book"
+input_names: "book", "Book"
+room_location: 2
+description: "A big old dusty book."
