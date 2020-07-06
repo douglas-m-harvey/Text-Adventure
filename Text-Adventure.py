@@ -96,7 +96,7 @@ def room_change(direction):
 # "room_change" function for each direction.
 print("""For a list of available commands, type "help".\n""")
 print(list_rooms[player_start]["description_first"])
-list_rooms[player_start]["visited"] = str(True)
+list_rooms[player_start]["visited"] = True
 running = True
 while running is not False:
     player_input = str(input())
@@ -117,3 +117,13 @@ while running is not False:
                 if player_input == str(i + k):
                     if list_objects[j]["room_location"] == current_room:
                         print("\n" + list_objects[j]["description"])
+        for j in range(no_rooms):
+            if current_room == j:
+                if list_rooms[j]["features"] != 0:
+                    for k in range(list_rooms[j]["features"]):
+                        for l in list_rooms[j]["input_feature_" + str(k)]:
+                            if player_input == str(i + l):
+                                print("\n" +
+                                      list_rooms[j]["text_feature_" + str(k)])
+        if player_input == str(i + "room"):
+            print("\n" + list_rooms[current_room]["description_first"])

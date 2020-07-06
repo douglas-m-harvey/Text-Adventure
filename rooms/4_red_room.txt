@@ -8,3 +8,6 @@ connect_n: 5
 connect_e: 0
 connect_s: False
 connect_w: False
+features: 0
+input_feature_0: "", ""
+text_feature_0: ""

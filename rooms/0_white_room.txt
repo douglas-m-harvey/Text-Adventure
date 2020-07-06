@@ -1,10 +1,14 @@
 number: 0
 name: "Main Room"
-player_location: False
 visited: False
-description_first: "You are in an empty white room. There are doors in the north, east, south and west walls. There is an axe on the floor."
-description_visited: "You are back in the empty white room. There are doors in the north, east, south and west walls. There is an axe on the floor."
+description_first: "You are in an empty white room. There are doors in the north, east, south and west walls. There is a chair in the corner and a bookcase by one wall. There is an axe on the floor."
+description_visited: "You are back in the empty white room. There are doors in the north, east, south and west walls. There is a chair in the corner and a bookcase by one wall. There is an axe on the floor."
 connect_n: 1
 connect_e: 2
 connect_s: 3
 connect_w: 4
+features: 2
+input_feature_0: "chair", "chair in the corner"
+text_feature_0: "An old wooden chair, doesn't look very comfy!"
+input_feature_1: "bookcase", "book case", "bookcase by the wall", "book case by the wall"
+text_feature_1: "An old bookcase."

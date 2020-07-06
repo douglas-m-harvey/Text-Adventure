@@ -2,9 +2,12 @@ number: 3
 name: "placeholder 3"
 player_location: False
 visited: False
-description_first: "You are in an empty green room. There is a door in the north wall."
-description_visited: "You are back in the empty green room. There is a door in the north wall."
+description_first: "You are in an empty green room. There is a door in the north wall. There is a plant in a pot on the floor. "
+description_visited: "You are back in the empty green room. There is a door in the north wall. There is a plant in a pot on the floor. "
 connect_n: 0
 connect_e: False
 connect_s: False
 connect_w: False
+features: 1
+input_feature_0: "plant", "Plant"
+text_feature_0: "It looks like some kind of tiny apple tree."
